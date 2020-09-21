@@ -5,6 +5,10 @@ import {Injectable} from '@angular/core';
 })
 export class MainService {
 
+  constructor() {
+    this.sortClients();
+  }
+
   view: 'new' | 'edit' | 'nothing' = 'nothing';
 
   showWarning = false;
@@ -49,6 +53,10 @@ export class MainService {
     },
   ];
 
+  sortClients(): void {
+    this.clients.sort((a, b) => a.last.localeCompare(b.last));
+  }
+
   newClient(): void {
     this.showWarning = false;
     this.view = 'new';
@@ -69,6 +77,8 @@ export class MainService {
 
     if (newClient.first.trim() !== '' || newClient.last.trim() !== '') {
       this.clients.push(newClient);
+      this.sortClients();
+
       this.view = 'nothing';
       this.newFirst = '';
       this.newLast = '';
@@ -79,6 +89,7 @@ export class MainService {
       this.newSalary = null;
     } else {
       this.showWarning = true;
+
     }
   }
 
@@ -104,6 +115,7 @@ export class MainService {
     this.editedClient.postcode = this.editPostcode;
     this.editedClient.location = this.editLocation;
     this.editedClient.salary = this.editSalary;
+    this.sortClients();
 
     this.view = 'nothing';
     this.indexEditClient = null;
