@@ -1,0 +1,36 @@
+<h2>Neuer Kunde</h2>
+
+<div class="form">
+
+  <label>Vorname
+    <input type="text" [(ngModel)]="service.newFirst">
+  </label>
+
+  <label>Nachname
+    <input type="text" [(ngModel)]="service.newLast">
+  </label>
+
+  <label>Straße
+    <input type="text" [(ngModel)]="service.newStreet">
+  </label>
+
+  <label>Hausnummer
+    <input type="text" [(ngModel)]="service.newNumber">
+  </label>
+
+  <label>Postleitzahl
+    <input type="text" [(ngModel)]="service.newPostcode">
+  </label>
+
+  <label>Ort
+    <input type="text" [(ngModel)]="service.newLocation">
+  </label>
+
+  <label>Einkommen
+    <input type="text" [(ngModel)]="service.newSalary">
+  </label>
+
+  <button (click)="service.saveClient()">Kunden speichern</button>
+  <button (click)="service.view = 'nothing'">Abbrechen</button>
+
+</div>

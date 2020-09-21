@@ -1,0 +1,37 @@
+<h2>{{service.editFirst}} {{service.editLast}}</h2>
+
+<div class="form">
+
+  <label>Vorname
+    <input type="text" [(ngModel)]="service.editFirst">
+  </label>
+
+  <label>Nachname
+    <input type="text" [(ngModel)]="service.editLast">
+  </label>
+
+  <label>Straße
+    <input type="text" [(ngModel)]="service.editStreet">
+  </label>
+
+  <label>Hausnummer
+    <input type="text" [(ngModel)]="service.editNumber">
+  </label>
+
+  <label>Postleitzahl
+    <input type="text" [(ngModel)]="service.editPostcode">
+  </label>
+
+  <label>Ort
+    <input type="text" [(ngModel)]="service.editLocation">
+  </label>
+
+  <label>Einkommen
+    <input type="text" [(ngModel)]="service.editSalary">
+  </label>
+
+  <button (click)="service.saveChanges()">Änderung speichern</button>
+  <button (click)="service.resetChanges()">Änderung zurücksetzen</button>
+  <button  (click)="service.deleteClient()">Kunden löschen</button>
+
+</div>
