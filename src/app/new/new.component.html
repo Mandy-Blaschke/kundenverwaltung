@@ -4,13 +4,23 @@
 
   <app-form-row>
 
-    <label>Vorname
+    <label [class.warning]="service.showWarning === true">Vorname
       <input type="text" [(ngModel)]="service.newFirst">
     </label>
 
-    <label>Nachname
+    <label [class.warning]="service.showWarning === true">Nachname
       <input type="text" [(ngModel)]="service.newLast">
     </label>
+
+  </app-form-row>
+
+  <app-form-row>
+
+    <div *ngIf="service.showWarning === true"
+         [class.warnung]="service.showWarning === true"
+         class="warning-box">
+      *Es muss mindestens ein Name gesetzt sein!
+    </div>
 
   </app-form-row>
 
@@ -49,7 +59,7 @@
   <app-form-row>
 
     <app-button (click)="service.saveClient()">Kunden speichern</app-button>
-    <app-button (click)="service.view = 'nothing'">Abbrechen</app-button>
+    <app-button (click)="service.cancelNewClient()">Abbrechen</app-button>
 
   </app-form-row>
 

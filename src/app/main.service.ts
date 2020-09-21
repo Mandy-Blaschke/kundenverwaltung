@@ -7,16 +7,18 @@ export class MainService {
 
   view: 'new' | 'edit' | 'nothing' = 'nothing';
 
-  newFirst: string;
-  newLast: string;
+  showWarning = false;
+
+  newFirst = '';
+  newLast = '';
   newStreet: string;
   newNumber: number;
   newPostcode: number;
   newLocation: string;
   newSalary: number;
 
-  editFirst: string;
-  editLast: string;
+  editFirst = '';
+  editLast = '';
   editStreet: string;
   editNumber: number;
   editPostcode: number;
@@ -25,8 +27,6 @@ export class MainService {
 
   indexEditClient: number;
   editedClient: Client;
-
-  activated: boolean;
 
   clients: Client[] = [
     {
@@ -60,8 +60,20 @@ export class MainService {
       location: this.newLocation,
       salary: this.newSalary,
     };
-    this.clients.push(newClient);
-    this.view = 'nothing';
+
+    if (newClient.first.trim() !== '' || newClient.last.trim() !== '') {
+      this.clients.push(newClient);
+      this.view = 'nothing';
+      this.newFirst = '';
+      this.newLast = '';
+      this.newStreet = undefined;
+      this.newNumber = null;
+      this.newPostcode = null;
+      this.newLocation = undefined;
+      this.newSalary = null;
+    } else {
+      this.showWarning = true;
+    }
   }
 
   editClient(ClientToEdit: Client): void {
@@ -88,6 +100,7 @@ export class MainService {
     this.editedClient.salary = this.editSalary;
 
     this.view = 'nothing';
+    this.indexEditClient = null;
   }
 
   resetChanges(): void {
@@ -97,6 +110,11 @@ export class MainService {
   deleteClient(): void {
     this.clients.splice(this.indexEditClient, 1);
     this.view = 'nothing';
+  }
+
+  cancelNewClient(): void {
+    this.view = 'nothing';
+    this.showWarning = false;
   }
 }
 

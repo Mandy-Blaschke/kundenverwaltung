@@ -6,14 +6,14 @@
 
     <p *ngFor="let client of service.clients"
        (click)="service.editClient(client)"
-        [class.active]="service.indexEditClient === service.clients.indexOf(client)">
+       [class.active]="service.indexEditClient === service.clients.indexOf(client)">
       {{client.first}} {{client.last}}
     </p>
 
-    <app-button (click)="service.view = 'new'"
+    <app-button (click)="service.view = 'new';
+                service.indexEditClient = null"
                 class="new-client"
-                [class.disabled]="service.view === 'new'"
-    >
+                [class.disabled]="service.view === 'new'">
       Neuer Kunde
     </app-button>
 
