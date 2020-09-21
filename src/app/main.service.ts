@@ -63,6 +63,11 @@ export class MainService {
     this.indexEditClient = null;
   }
 
+  cancelNewClient(): void {
+    this.view = 'nothing';
+    this.showWarning = false;
+  }
+
 
   saveClient(): void {
     const newClient = {
@@ -128,11 +133,7 @@ export class MainService {
   deleteClient(): void {
     this.clients.splice(this.indexEditClient, 1);
     this.view = 'nothing';
-  }
-
-  cancelNewClient(): void {
-    this.view = 'nothing';
-    this.showWarning = false;
+    this.indexEditClient = null;
   }
 
 }
