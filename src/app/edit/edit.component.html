@@ -1,37 +1,57 @@
-<h2>{{service.editFirst}} {{service.editLast}}</h2>
-
 <div class="form">
 
-  <label>Vorname
-    <input type="text" [(ngModel)]="service.editFirst">
-  </label>
+  <h2>{{service.editFirst}} {{service.editLast}}</h2>
 
-  <label>Nachname
-    <input type="text" [(ngModel)]="service.editLast">
-  </label>
+  <app-form-row>
 
-  <label>Straße
-    <input type="text" [(ngModel)]="service.editStreet">
-  </label>
+    <label>Vorname
+      <input type="text" [(ngModel)]="service.editFirst">
+    </label>
 
-  <label>Hausnummer
-    <input type="text" [(ngModel)]="service.editNumber">
-  </label>
+    <label>Nachname
+      <input type="text" [(ngModel)]="service.editLast">
+    </label>
 
-  <label>Postleitzahl
-    <input type="text" [(ngModel)]="service.editPostcode">
-  </label>
+  </app-form-row>
 
-  <label>Ort
-    <input type="text" [(ngModel)]="service.editLocation">
-  </label>
+  <app-form-row>
 
-  <label>Einkommen
-    <input type="text" [(ngModel)]="service.editSalary">
-  </label>
+    <label>Straße
+      <input type="text" [(ngModel)]="service.editStreet">
+    </label>
 
-  <button (click)="service.saveChanges()">Änderung speichern</button>
-  <button (click)="service.resetChanges()">Änderung zurücksetzen</button>
-  <button  (click)="service.deleteClient()">Kunden löschen</button>
+    <label>Hausnummer
+      <input type="text" [(ngModel)]="service.editNumber">
+    </label>
+
+  </app-form-row>
+
+  <app-form-row>
+
+    <label>Postleitzahl
+      <input type="text" [(ngModel)]="service.editPostcode">
+    </label>
+
+    <label>Ort
+      <input type="text" [(ngModel)]="service.editLocation">
+    </label>
+
+  </app-form-row>
+
+  <app-form-row>
+
+    <label>Einkommen
+      <input type="text" [(ngModel)]="service.editSalary">
+    </label>
+
+  </app-form-row>
+
+  <app-form-row>
+
+    <app-button (click)="service.saveChanges()">Änderung speichern</app-button>
+    <app-button (click)="service.resetChanges()">Änderung zurücksetzen</app-button>
+    <app-button (click)="service.deleteClient()">Kunden löschen</app-button>
+
+  </app-form-row>
 
 </div>

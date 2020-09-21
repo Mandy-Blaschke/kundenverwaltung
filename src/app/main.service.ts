@@ -26,6 +26,8 @@ export class MainService {
   indexEditClient: number;
   editedClient: Client;
 
+  activated: boolean;
+
   clients: Client[] = [
     {
       first: 'Patricia',

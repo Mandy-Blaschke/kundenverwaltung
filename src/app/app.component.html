@@ -1,20 +1,30 @@
 <h1>Kundenverwaltung</h1>
 
-<div class="left">
+<div class="form">
 
-  <p *ngFor="let kunde of service.clients"
-  (click)="service.editClient(kunde)">
-    {{kunde.first}} {{kunde.last}}
-  </p>
+  <div class="left">
 
-  <button (click)="service.view = 'new'">Neuer Kunde</button>
+    <p *ngFor="let client of service.clients"
+       (click)="service.editClient(client)"
+        [class.active]="service.indexEditClient === service.clients.indexOf(client)">
+      {{client.first}} {{client.last}}
+    </p>
 
-</div>
+    <app-button (click)="service.view = 'new'"
+                class="new-client"
+                [class.disabled]="service.view === 'new'"
+    >
+      Neuer Kunde
+    </app-button>
+
+  </div>
 
 
-<div class="right">
+  <div class="right">
 
-  <app-new *ngIf="service.view === 'new'"></app-new>
-  <app-edit *ngIf="service.view === 'edit'"></app-edit>
+    <app-new *ngIf="service.view === 'new'"></app-new>
+    <app-edit *ngIf="service.view === 'edit'"></app-edit>
+
+  </div>
 
 </div>

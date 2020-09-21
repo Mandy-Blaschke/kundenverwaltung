@@ -1,0 +1,51 @@
+h1 {
+  padding: 25px;
+  margin: 0;
+  text-align: center;
+  background-color: #b75e23;
+  color: whitesmoke;
+  font-weight: normal;
+}
+
+.form {
+  display: flex;
+  min-height: 400px;
+
+  .left {
+    position: relative;
+    width: 20%;
+    border: 1px solid black;
+    padding: 15px;
+    background-color: #f5f5f5;
+
+    .new-client {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+    }
+
+    .disabled {
+      background-color: #f5f5f5;
+      border: 1px solid #bababa;
+      color: darkgray;
+    }
+
+    p {
+      border: 1px solid darkgray;
+      padding: 5px;
+    }
+
+    .active {
+      background-color: #ffb0b0;
+      border: 1px solid #a50d0d;
+    }
+  }
+
+  .right{
+    width: 80%;
+    border: 1px solid black;
+    border-left: 0;
+  }
+
+}
+
