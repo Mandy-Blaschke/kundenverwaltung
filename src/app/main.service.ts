@@ -49,6 +49,12 @@ export class MainService {
     },
   ];
 
+  newClient(): void {
+    this.showWarning = false;
+    this.view = 'new';
+    this.indexEditClient = null;
+  }
+
 
   saveClient(): void {
     const newClient = {
@@ -116,6 +122,7 @@ export class MainService {
     this.view = 'nothing';
     this.showWarning = false;
   }
+
 }
 
 export interface Client {

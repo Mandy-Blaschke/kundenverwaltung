@@ -10,8 +10,7 @@
       {{client.first}} {{client.last}}
     </p>
 
-    <app-button (click)="service.view = 'new';
-                service.indexEditClient = null"
+    <app-button (click)="service.newClient()"
                 class="new-client"
                 [class.disabled]="service.view === 'new'">
       Neuer Kunde
