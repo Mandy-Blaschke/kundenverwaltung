@@ -5,5 +5,9 @@
   background-color: #d3efff;
   padding: 5px 15px;
   border: 1px solid #218db1;
-  text-align: center;;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
