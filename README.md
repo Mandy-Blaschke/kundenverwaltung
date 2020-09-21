@@ -1,5 +1,3 @@
-# WIP
-
 # Kundenverwaltung
 
 - Erstellung im Rahmen des Selbststudiums
