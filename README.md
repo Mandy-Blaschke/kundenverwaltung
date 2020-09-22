@@ -9,8 +9,5 @@
 ## Lernziel
 - (tlw. Wiederholung) Umgang mit Arrays
     - Speichern, Ändern, Löschen
-    
-## nächster Versuch 
-- diese Kundenverwaltung **mit Routing**
 
 
