@@ -4,7 +4,6 @@
 - einfache Kundenverwaltung
 - erste vollständige Anwendung dieser Art
 - **zweites Angular-Projekt mit Praxisbezug**
-- Ansicht: [Kundenverwaltung](https://mb89-kundenverwaltung.web.app)
 
 ## Lernziel
 - (tlw. Wiederholung) Umgang mit Arrays
